@@ -179,3 +179,94 @@ A lightweight markup language used for formatting text in project documentation 
 
 **Git & GitHub**  
 Git is a version control system, and GitHub is the platform used for hosting code, managing collaboration, reviewing changes, and deploying via CI/CD pipelines.
+
+<br><br>
+
+# 🧱 Data Model: Entities, Fields & Relationships
+
+This section describes the core entities that make up the backend of the Airbnb Clone platform, including their critical fields and how they relate to one another in a relational database design.
+
+## 👤 Users
+
+**Purpose**: Represents all users of the platform—guests or hosts.
+
+**Key Fields**:
+- `id`: Unique identifier for the user.
+- `name`: Full name of the user.
+- `email`: Used for login and communication.
+- `role`: Defines whether the user is a host, guest, or admin.
+- `created_at`: Timestamp of account creation.
+
+**Relationships**:
+- A user can list multiple properties.
+- A user can book multiple properties.
+- A user can write multiple reviews.
+
+## 🏡 Properties
+
+**Purpose**: Represents all accommodations listed by hosts.
+
+**Key Fields**:
+- `id`: Unique identifier for the property.
+- `owner_id`: Foreign key linking to the user (host).
+- `title`: Short title or name of the property.
+- `location`: Geographical location of the property.
+- `price_per_night`: Cost to book per night.
+
+**Relationships**:
+- Each property belongs to a single user (host).
+- A property can have many bookings.
+- A property can have many reviews.
+
+## 📅 Bookings
+
+**Purpose**: Represents a reservation made by a user for a property.
+
+**Key Fields**:
+- `id`: Unique identifier for the booking.
+- `user_id`: Foreign key linking to the user (guest).
+- `property_id`: Foreign key linking to the property.
+- `check_in_date`: Date the booking starts.
+- `check_out_date`: Date the booking ends.
+
+**Relationships**:
+- A booking belongs to one user and one property.
+- A booking can have one payment record.
+
+## 💳 Payments
+
+**Purpose**: Stores payment details related to bookings.
+
+**Key Fields**:
+- `id`: Unique identifier for the payment.
+- `booking_id`: Foreign key linking to the booking.
+- `amount`: Total amount paid.
+- `status`: Payment status (e.g., completed, pending).
+- `payment_date`: Timestamp of transaction.
+
+**Relationships**:
+- A payment belongs to a single booking.
+
+## ⭐ Reviews
+
+**Purpose**: Allows users to review properties they've stayed at.
+
+**Key Fields**:
+- `id`: Unique identifier for the review.
+- `user_id`: Foreign key linking to the reviewer.
+- `property_id`: Foreign key linking to the reviewed property.
+- `rating`: Numeric score given by the user.
+- `comment`: Optional written feedback.
+
+**Relationships**:
+- A review belongs to one user and one property.
+
+## 🔗 Entity Relationship Summary
+
+- A **User** can own multiple **Properties**.
+- A **User** can make multiple **Bookings**.
+- A **User** can write multiple **Reviews**.
+- A **Property** can have many **Bookings** and **Reviews**.
+- A **Booking** belongs to a **User** and a **Property**.
+- A **Payment** is tied to one **Booking**.
+- A **Review** links both a **User** and a **Property**.
