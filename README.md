@@ -300,3 +300,94 @@ Automated pipelines using GitHub Actions ensure that every code change is tested
 
 ## 🔐 Security & Access Control
 Implements modern security standards including authentication, authorization, input validation, and encrypted communication. These measures protect user data and maintain the integrity of transactions.
+
+<br><br>
+
+# 🔐 API Security
+
+Securing APIs is critical in the development of the Airbnb Clone backend to protect sensitive user data, ensure trust, and maintain the integrity of the platform. This section outlines the key security measures to be implemented across the system.
+
+## ✅ Authentication
+
+**What it is:**  
+Authentication verifies the identity of users accessing the platform, ensuring only registered users can perform specific actions.
+
+**Why it matters:**  
+Authentication helps prevent unauthorized access to user accounts and personal data, maintaining privacy and trust across the application.
+
+**Implementation:**  
+- Token-based authentication (e.g., JWT) for secure and stateless user sessions.
+- Password hashing using industry standards (e.g., bcrypt).
+
+## ✅ Authorization
+
+**What it is:**  
+Authorization determines what authenticated users are allowed to do (e.g., only property owners can edit their listings).
+
+**Why it matters:**  
+It enforces access control, preventing users from accessing or modifying resources they don’t own or aren’t permitted to interact with.
+
+**Implementation:**  
+- Role-based access control (RBAC) for guests, hosts, and admins.
+- Fine-grained permissions on resources such as bookings, payments, and property listings.
+
+## ✅ Rate Limiting
+
+**What it is:**  
+Restricts the number of requests a user or IP can make in a given timeframe.
+
+**Why it matters:**  
+Helps protect the system from brute-force attacks, denial-of-service (DoS), and API abuse.
+
+**Implementation:**  
+- Use Django throttling classes or middleware to limit login attempts and API usage.
+
+## ✅ Input Validation & Sanitization
+
+**What it is:**  
+Ensures all incoming data is validated and free from malicious input (e.g., SQL injection, XSS).
+
+**Why it matters:**  
+Prevents common attack vectors that can exploit vulnerabilities in user inputs.
+
+**Implementation:**  
+- Strict serializer validation (Django REST Framework).
+- Escaping and sanitizing all user inputs and outputs.
+
+## ✅ HTTPS and Secure Communication
+
+**What it is:**  
+Ensures that data transmitted between client and server is encrypted.
+
+**Why it matters:**  
+Protects sensitive information like login credentials and payment data from being intercepted.
+
+**Implementation:**  
+- Enforce HTTPS in production using SSL/TLS certificates.
+- Disable insecure HTTP traffic.
+
+## ✅ Secure Payments
+
+**What it is:**  
+Applies secure handling of payment transactions and financial data.
+
+**Why it matters:**  
+Protects users’ financial information and ensures secure transactions.
+
+**Implementation:**  
+- Use third-party payment processors with PCI compliance (e.g., Stripe or PayPal).
+- Never store raw payment details in the database.
+
+## ✅ Logging & Monitoring
+
+**What it is:**  
+Tracks API usage and errors for security audits and threat detection.
+
+**Why it matters:**  
+Allows developers to quickly detect and respond to suspicious behavior.
+
+**Implementation:**  
+- Centralized logging of errors and failed login attempts.
+- Alert systems for potential breaches or unusual activity.
+
+By implementing these security measures, the Airbnb Clone backend will provide a secure and trustworthy environment for all users, hosts, and developers interacting with the system.
