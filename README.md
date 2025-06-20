@@ -270,3 +270,33 @@ This section describes the core entities that make up the backend of the Airbnb 
 - A **Booking** belongs to a **User** and a **Property**.
 - A **Payment** is tied to one **Booking**.
 - A **Review** links both a **User** and a **Property**.
+
+<br><br>
+
+# 🚀 Feature Breakdown
+
+The Airbnb Clone backend includes several key features that work together to deliver a seamless and secure user experience. Each component plays a specific role in replicating the core functionalities of a modern booking platform.
+
+## 👤 User Management
+This feature allows users to register, authenticate, and manage their profiles. It supports role-based access (guest, host, admin) and enables secure login and session handling to protect user data.
+
+## 🏡 Property Management
+Hosts can create, update, and delete property listings with essential details such as location, price, and availability. This feature makes it possible to showcase accommodations that can be booked by users.
+
+## 📅 Booking System
+Enables users to reserve available properties by specifying check-in and check-out dates. The system ensures that double bookings are avoided and provides tools to manage active or past reservations.
+
+## 💳 Payment Processing
+Integrates secure payment functionality that handles transactions for bookings. It records payment details, verifies status, and ensures that bookings are completed only after successful payment.
+
+## ⭐ Review System
+Allows users to leave ratings and feedback for properties they’ve stayed at. Reviews contribute to transparency, user trust, and help improve host accountability and property quality.
+
+## 📄 API Documentation
+The backend APIs are documented using OpenAPI and Django REST Framework for REST, and GraphQL for advanced querying. This provides clarity for developers and smooth integration with frontend and third-party services.
+
+## ⚙️ CI/CD Integration
+Automated pipelines using GitHub Actions ensure that every code change is tested and deployed consistently. This reduces bugs, accelerates delivery, and enforces best practices in software development.
+
+## 🔐 Security & Access Control
+Implements modern security standards including authentication, authorization, input validation, and encrypted communication. These measures protect user data and maintain the integrity of transactions.
