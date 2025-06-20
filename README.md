@@ -182,7 +182,7 @@ Git is a version control system, and GitHub is the platform used for hosting cod
 
 <br><br>
 
-# 🧱 Data Model: Entities, Fields & Relationships
+# 🧱 DataBase Model: Entities, Fields & Relationships
 
 This section describes the core entities that make up the backend of the Airbnb Clone platform, including their critical fields and how they relate to one another in a relational database design.
 
